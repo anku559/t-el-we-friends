@@ -1,12 +1,21 @@
 import { env } from 'process';
 
-const { DB_HOST, DB_PORT, DB_NAME, DB_USERNAME, DB_PASSWORD, PORT } = env;
+const {
+  API_PREFIX,
+  DB_HOST,
+  DB_NAME,
+  DB_PASSWORD,
+  DB_PORT,
+  DB_USERNAME,
+  PORT,
+} = env;
 
 export default {
-  PORT,
+  API_PREFIX,
   DB_HOST,
-  DB_PORT,
   DB_NAME,
-  DB_USERNAME,
   DB_PASSWORD,
+  DB_PORT,
+  DB_USERNAME,
+  PORT,
 };
