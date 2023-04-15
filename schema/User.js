@@ -9,7 +9,7 @@ const UserSchema = new Schema(
 
     // Auth Credentials
     email: { type: String, unique: true, required: true, trim: true },
-    userName: {
+    username: {
       type: String,
       unique: true,
       required: true,

@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import UserAuthentication from '../controllers/UserAuth.js';
 import uploadFiles from '../helpers/third-party/multi-parts.js';
+import { UserRegistration } from '../validations/User.js';
 
 const router = Router();
 
@@ -11,6 +12,7 @@ router.post(
     { name: 'coverImage', maxCount: 1 },
     { name: 'profileImage', maxCount: 1 },
   ]),
+  UserRegistration,
   UserAuthentication.registerUser,
 );
 
