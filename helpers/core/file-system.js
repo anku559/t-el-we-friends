@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, unlinkSync } from 'fs';
+import { existsSync, mkdirSync, unlinkSync, renameSync } from 'fs';
 import { join, resolve } from 'path';
 
 const dirname = resolve();
@@ -22,4 +22,13 @@ export function findAndDelete(dirPath) {
     response = true;
   }
   return response;
+}
+
+export function moveFile(oldPath, newPath) {
+  const dirOldPath = join(dirname, oldPath);
+  const dirNewPath = join(dirname, newPath);
+
+  renameSync(dirOldPath, dirNewPath);
+
+  return dirNewPath;
 }

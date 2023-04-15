@@ -14,10 +14,16 @@ const connectDB = async () => {
       useUnifiedTopology: true,
     });
 
-    console.log(`Connected\nPORT: ${PORT}\nDB: ${DB_NAME}`);
+    return `Connected\nPORT: ${PORT}\nDB: ${DB_NAME}`;
   } catch (err) {
-    console.log('Failed to connect to MongoDB', err);
+    return err;
   }
 };
 
-connectDB();
+connectDB()
+  .then((connectionString) => {
+    console.log(connectionString);
+  })
+  .catch((err) => {
+    console.log('Failed to connect to MongoDB', err);
+  });

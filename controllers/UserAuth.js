@@ -1,5 +1,11 @@
+import UserAuthService from '../services/UserAuth.js';
+
 export default class UserAuthentication {
-  static registerUser(req, res) {
-    res.status(200).json({ body: req.body, files: req.files });
+  static async registerUser(req, res) {
+    const response = await UserAuthService.registerUser({
+      ...req.body,
+      ...req.files,
+    });
+    res.status(response.code).json(response);
   }
 }
