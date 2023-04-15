@@ -4,7 +4,7 @@ import ENV from './variables.js';
 import './config/db.js';
 import app from './app.js';
 import routes from './routes/index.routes.js';
-import checkAndCreateDir from './helpers/core/file-system.js';
+import { checkAndCreateDir } from './helpers/core/file-system.js';
 
 const dirname = resolve();
 
